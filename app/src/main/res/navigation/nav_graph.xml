@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigationen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:grisha="http://schemas.android.com/sasacilodgvaqvssaqme?"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.challenge.presentation.screen.log_in.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logInFragment_to_friendsFragment"
+            app:destination="@id/friendsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.challenge.presentation.screen.connection.ConnectionsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_connections">
+        <action
+            android:id="@+id/action_friendsFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.challenge.presentation.screen.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_friendsFragment"
+            app:destination="@id/friendsFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigationen>
