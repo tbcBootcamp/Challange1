@@ -11,8 +11,6 @@ import com.example.challenge.databinding.FragmentConnectionsBinding
 import com.example.challenge.presentation.base.BaseFragment
 import com.example.challenge.presentation.event.conection.ConnectionEvent
 import com.example.challenge.presentation.extension.showSnackBar
-import com.example.challenge.presentation.screen.log_in.LogInFragmentDirections
-import com.example.challenge.presentation.screen.log_in.LogInViewModel
 import com.example.challenge.presentation.state.connection.ConnectionState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -52,7 +50,7 @@ class ConnectionsFragment :
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiEvent.collect {
-                    handleNavigationEvents(event = it)
+                    handleNavigationEvents()
                 }
             }
         }
@@ -72,8 +70,7 @@ class ConnectionsFragment :
         }
     }
 
-    private fun handleNavigationEvents(event: ConnectionsViewModel.ConnectionUiEvent) {
+    private fun handleNavigationEvents() {
         findNavController().navigate(ConnectionsFragmentDirections.actionFriendsFragmentToLogInFragment())
     }
 }
-

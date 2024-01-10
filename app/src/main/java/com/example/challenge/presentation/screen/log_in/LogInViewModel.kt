@@ -81,9 +81,6 @@ class LogInViewModel @Inject constructor(
     }
 
     sealed interface LogInUiEvent {
-        object NavigateToConnections : LogInUiEvent
+        data object NavigateToConnections : LogInUiEvent
     }
 }
-
-
-
